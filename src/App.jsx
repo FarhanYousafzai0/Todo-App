@@ -47,7 +47,7 @@ const App = () => {
               onChange={(e) => setInputValue(e.target.value)}
               type="text"
               placeholder='Let’s Get Things Done'
-              className='border-2 w-full py-4 rounded-l-lg border-pink-400 outline-0 '
+              className='border-2 w-full py-2 rounded-l-lg border-pink-400 outline-0 px-2'
             />
             <button onClick={handleAdd} className='py-[10px] cursor-pointer px-2 flex items-center gap-1 rounded-md bg-pink-400 text-white'>
               Add <RiHeartAdd2Line />
@@ -56,19 +56,29 @@ const App = () => {
         </div>
 
         {/* Your Todos */}
-        <div key={index} className="flex justify-between items-center rounded-lg mt-2 border-1 border-pink-200 shadow-lg shadow-pink-100 p-4 md:p-5">
-  <p>{todo}</p>
+        <div className="Your-Todos p-5">
+          <p className='text-[1.3rem] uppercase flex items-center gap-2'>Your List is Waiting! <GoGoal /></p>
 
-  <div className="flex items-center gap-2">
-    <button onClick={handleEdit} className='py-[5px] cursor-pointer px-2 flex items-center gap-1 rounded-md bg-pink-400 text-white'>
-      <MdOutlineModeEdit /> Edit
-    </button>
-    <button onClick={handleDelete} className='py-[5px] cursor-pointer px-2 flex items-center gap-1 rounded-md bg-pink-400 text-white'>
-      <MdDeleteOutline /> Delete
-    </button>
-  </div>
-</div>
+          {todos.length > 0 ? (
+            todos.map((todo, index) => (
+              <div key={index} className="flex justify-between items-center rounded-lg mt-2 border-1 border-pink-200 shadow-lg shadow-pink-100
+               md:p-2">
+                <p>{todo}</p>
 
+                <div className="flex items-center gap-2">
+                  <button onClick={handleEdit} className='py-[5px] cursor-pointer px-2 flex items-center gap-1 rounded-md bg-pink-400 text-white'>
+                    <MdOutlineModeEdit /> Edit
+                  </button>
+                  <button onClick={handleDelete} className='py-[5px] cursor-pointer px-2 flex items-center gap-1 rounded-md bg-pink-400 text-white'>
+                    <MdDeleteOutline /> Delete
+                  </button>
+                </div>
+              </div>
+            ))
+          ) : (
+            <p className="text-center text-gray-600">There are no todos yet!</p>
+          )}
+        </div>
       </div>
     </>
   )
