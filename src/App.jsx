@@ -41,15 +41,15 @@ const App = () => {
         <div className="Add-Todos p-5">
           <p className='text-[1.3rem] uppercase flex items-center gap-2'>Set Your Goals Now <GoGoal /></p>
 
-          <div className="flex items-center justify-between gap-2 mt-3">
+          <div className="flex items-center justify-between gap  mt-3">
             <input
               value={InputValue}
               onChange={(e) => setInputValue(e.target.value)}
               type="text"
               placeholder='Let’s Get Things Done'
-              className='border-2 w-full py-2 rounded-l-lg border-pink-400 outline-0 px-2'
+              className='border-1 w-full p-3 rounded-l-lg border-pink-400 outline-0 '
             />
-            <button onClick={handleAdd} className='py-[10px] cursor-pointer px-2 flex items-center gap-1 rounded-md bg-pink-400 text-white'>
+            <button onClick={handleAdd} className='py-[13px] cursor-pointer rounded-r-lg px-2 flex items-center gap-1  bg-pink-400 text-white'>
               Add <RiHeartAdd2Line />
             </button>
           </div>
@@ -62,14 +62,15 @@ const App = () => {
           {todos.length > 0 ? (
             todos.map((todo, index) => (
               <div key={index} className="flex justify-between items-center rounded-lg mt-2 border-1 border-pink-200 shadow-lg shadow-pink-100
-               md:p-2">
-                <p>{todo}</p>
+               p-3">
+                <p>{todo
+                  }</p>
 
                 <div className="flex items-center gap-2">
-                  <button onClick={handleEdit} className='py-[5px] cursor-pointer px-2 flex items-center gap-1 rounded-md bg-pink-400 text-white'>
+                  <button onClick={handleEdit} className='py-[6px] cursor-pointer px-2 flex items-center gap-1 rounded-md bg-pink-400 text-white'>
                     <MdOutlineModeEdit /> Edit
                   </button>
-                  <button onClick={handleDelete} className='py-[5px] cursor-pointer px-2 flex items-center gap-1 rounded-md bg-pink-400 text-white'>
+                  <button onClick={handleDelete} className='py-[6px] cursor-pointer px-2 flex items-center gap-1 rounded-md bg-pink-400 text-white'>
                     <MdDeleteOutline /> Delete
                   </button>
                 </div>
