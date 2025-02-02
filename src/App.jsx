@@ -16,7 +16,7 @@ const App = () => {
   const handleAdd = () => {
     if (InputValue.trim() === "") return; // Prevent adding empty todos
     setTodos([...todos, InputValue]); // Add todo to the list
-    setToDoValue(""); // Clear input field after adding
+    setInputValue(""); // Clear input field after adding
   }
 
   // function to handle editing todo (for now, just a placeholder)
