@@ -62,7 +62,7 @@ const App = () => {
           {todos.length > 0 ? (
             todos.map((todo, index) => (
               <div key={index} className="flex justify-between items-center rounded-lg mt-2 border-1 border-pink-200 shadow-lg shadow-pink-100
-               md:p-2">
+               py-3">
                 <p>{todo
                   }</p>
 
