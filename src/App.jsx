@@ -153,6 +153,10 @@ const App = () => {
             <p className="text-center text-gray-600">There are no todos yet!</p>
           )}
         </div>
+
+
+
+        <div className="w-full py-3  rounded-md bg-pink-400 text-center  text-white">Create by @Farhan Yousafzai</div>
       </div>
     </>
   );
